@@ -78,9 +78,7 @@ const globalErrorHandler = async (err, req, res, next) => {
   // Default error response
   res.status(err.statusCode).json({
     success: false,
-    message: process.env.NODE_ENV === 'production'
-      ? (err.isOperational ? err.message : 'Something went wrong. Please try again.')
-      : err.message,
+    message: err.message || 'Something went wrong. Please try again.',
     ...(process.env.NODE_ENV === 'development' && { stack: err.stack })
   });
 };

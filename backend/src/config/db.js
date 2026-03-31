@@ -15,11 +15,12 @@ const connectDB = async (retryCount = 0) => {
       socketTimeoutMS: 45000,
     });
 
-    logger.info(`💾 MongoDB Connected: ${conn.connection.host}:${conn.connection.port}/${conn.connection.name}`);
+    logger.info(`🚀 DATABASE CONNECTED: ${conn.connection.host}/${conn.connection.name}`);
     setupEventHandlers();
     return conn;
   } catch (error) {
-    logger.warn(`MongoDB connection attempt ${retryCount + 1} failed: ${error.message}`);
+    logger.error(`❌ DATABASE CONNECTION ERROR: ${error.message}`);
+    logger.warn(`Connection attempt ${retryCount + 1} failed.`);
 
     if (retryCount < MAX_RETRIES) {
       const delay = RETRY_DELAY_BASE * Math.pow(2, retryCount);

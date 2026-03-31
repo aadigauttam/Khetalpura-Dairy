@@ -61,6 +61,7 @@ const API = {
       }
     }
 
+    console.error(`❌ API Error [${method} ${url}]:`, lastError.message);
     throw lastError;
   },
 
