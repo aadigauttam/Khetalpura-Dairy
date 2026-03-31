@@ -1,0 +1,7 @@
+# Khetalpura Dairy - Backend
+
+node_modules/
+.env
+logs/
+uploads/
+backups/

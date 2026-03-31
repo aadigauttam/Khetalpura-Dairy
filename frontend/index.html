@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+  <meta name="description" content="Khetalpura Dairy - Fresh dairy products delivered to your doorstep">
+  <meta name="theme-color" content="#2E7D32">
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+  <meta name="apple-mobile-web-app-title" content="Khetalpura Dairy">
+
+  <title>Khetalpura Dairy</title>
+
+  <!-- PWA Manifest -->
+  <link rel="manifest" href="manifest.json">
+  <link rel="icon" type="image/png" sizes="192x192" href="icons/icon-192.png">
+  <link rel="apple-touch-icon" href="icons/icon-192.png">
+
+  <!-- Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&family=Noto+Sans+Devanagari:wght@400;500;600;700&display=swap" rel="stylesheet">
+
+  <!-- Material Icons -->
+  <link href="https://fonts.googleapis.com/icon?family=Material+Icons+Round" rel="stylesheet">
+
+  <!-- Styles -->
+  <link rel="stylesheet" href="css/variables.css">
+  <link rel="stylesheet" href="css/base.css">
+  <link rel="stylesheet" href="css/components.css">
+  <link rel="stylesheet" href="css/screens.css">
+  <link rel="stylesheet" href="css/animations.css">
+</head>
+<body>
+  <!-- App Shell -->
+  <div id="app">
+    <!-- Splash Screen -->
+    <div id="splash-screen" class="splash-screen">
+      <div class="splash-content">
+        <div class="splash-logo">
+          <span class="material-icons-round splash-icon">local_drink</span>
+        </div>
+        <h1 id="splash-name" class="splash-title">Khetalpura Dairy</h1>
+        <p id="splash-tagline" class="splash-tagline">Fresh from farm to your doorstep</p>
+        <div class="splash-loader">
+          <div class="loader-dots">
+            <span></span><span></span><span></span>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Offline Banner -->
+    <div id="offline-banner" class="offline-banner hidden">
+      <span class="material-icons-round">wifi_off</span>
+      <span data-i18n="offline_message">You are offline. Some features may not work.</span>
+    </div>
+
+    <!-- Main Content (replaced by router) -->
+    <div id="main-content"></div>
+
+    <!-- Bottom Navigation (visible after login) -->
+    <nav id="bottom-nav" class="bottom-nav hidden">
+      <!-- Populated by JS based on role -->
+    </nav>
+
+    <!-- Toast Notifications -->
+    <div id="toast-container" class="toast-container"></div>
+
+    <!-- Loading Overlay -->
+    <div id="loading-overlay" class="loading-overlay hidden">
+      <div class="loading-spinner"></div>
+    </div>
+  </div>
+
+  <!-- Core Scripts -->
+  <script src="js/config.js"></script>
+  <script src="js/i18n.js"></script>
+  <script src="js/api.js"></script>
+  <script src="js/store.js"></script>
+  <script src="js/router.js"></script>
+  <script src="js/ui.js"></script>
+  <script src="js/components.js"></script>
+
+  <!-- Screen Scripts -->
+  <script src="js/screens/auth.js"></script>
+  <script src="js/screens/customer.js"></script>
+  <script src="js/screens/admin.js"></script>
+  <script src="js/screens/staff.js"></script>
+  <script src="js/screens/delivery.js"></script>
+
+  <!-- App Entry -->
+  <script src="js/app.js"></script>
+
+  <!-- Service Worker Registration -->
+  <script>
+    if ('serviceWorker' in navigator) {
+      window.addEventListener('load', () => {
+        navigator.serviceWorker.register('sw.js')
+          .then(reg => console.log('SW registered:', reg.scope))
+          .catch(err => console.error('SW registration failed:', err));
+      });
+    }
+  </script>
+</body>
+</html>

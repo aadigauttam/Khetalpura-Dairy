@@ -1,0 +1,9 @@
+{
+  "name": "khetalpura-dairy-frontend",
+  "version": "1.0.0",
+  "description": "Khetalpura Dairy - PWA Frontend",
+  "scripts": {
+    "dev": "npx live-server --port=3000 --no-browser",
+    "serve": "npx http-server -p 3000"
+  }
+}
