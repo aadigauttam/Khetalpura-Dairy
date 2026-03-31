@@ -2,16 +2,16 @@
 // App Configuration
 // ============================================
 const CONFIG = {
-  API_URL: 'http://localhost:5000/api',
+  API_URL: 'https://khetalpuradairy-cadi.onrender.com/api',
   APP_NAME: 'Khetalpura Dairy',
   APP_NAME_HI: 'खेतलपुरा डेयरी',
   VERSION: '1.0.0',
-  
+
   // Timeouts
   API_TIMEOUT: 10000,  // 10 seconds
   RETRY_COUNT: 3,
   RETRY_DELAY: 2000,
-  
+
   // Indian phone
   COUNTRY_CODE: '91',
   PHONE_REGEX: /^[6-9]\d{9}$/,
