@@ -21,7 +21,7 @@ app.use(helmet({
 // CORS Configuration
 // ============================================
 app.use(cors({
-  origin: process.env.FRONTEND_URL || 'http://localhost:3000',
+  origin: true, // Allow all origins temporarily for deployment walkthrough
   credentials: true,
   methods: ['GET', 'POST', 'PUT', 'PATCH', 'DELETE'],
   allowedHeaders: ['Content-Type', 'Authorization']

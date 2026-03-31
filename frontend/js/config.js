@@ -8,7 +8,7 @@ const CONFIG = {
   VERSION: '1.0.0',
 
   // Timeouts
-  API_TIMEOUT: 10000,  // 10 seconds
+  API_TIMEOUT: 60000,  // 60 seconds (needed for Render free tier wakeup)
   RETRY_COUNT: 3,
   RETRY_DELAY: 2000,
 
