@@ -10,7 +10,8 @@ const logger = require('../utils/logger');
  * Generate JWT token
  */
 const generateToken = (userId) => {
-  return jwt.sign({ id: userId }, process.env.JWT_SECRET, {
+  const secret = process.env.JWT_SECRET || 'khetalpura_dairy_fallback_secret_2024';
+  return jwt.sign({ id: userId }, secret, {
     expiresIn: process.env.JWT_EXPIRES_IN || '30d'
   });
 };
