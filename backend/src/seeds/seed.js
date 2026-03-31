@@ -15,7 +15,7 @@ const Settings = require('../models/Settings');
 
 const seedDB = async () => {
   try {
-    await mongoose.connect(process.env.MONGODB_URI || 'mongodb://localhost:27017/khetalpura_dairy');
+    await mongoose.connect(process.env.MONGODB_URI || 'mongodb+srv://gauttamaddarssh_db_user:ZnROXhviHskqfnNQ@cluster1.3lxjl1a.mongodb.net/?appName=Cluster1');
     console.log('📦 Connected to MongoDB');
 
     // ============================================

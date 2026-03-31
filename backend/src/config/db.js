@@ -8,7 +8,7 @@ let mongoServer = null; // Keep reference for cleanup
 
 const connectDB = async (retryCount = 0) => {
   try {
-    const uri = process.env.MONGODB_URI || 'mongodb://localhost:27017/khetalpura_dairy';
+    const uri = process.env.MONGODB_URI || 'mongodb+srv://gauttamaddarssh_db_user:ZnROXhviHskqfnNQ@cluster1.3lxjl1a.mongodb.net/?appName=Cluster1';
     
     const conn = await mongoose.connect(uri, {
       serverSelectionTimeoutMS: 3000,
